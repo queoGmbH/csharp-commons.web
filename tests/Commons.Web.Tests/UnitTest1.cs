@@ -1,3 +1,5 @@
+using NUnit.Framework;
+
 namespace Commons.Web.Tests
 {
     public class Tests

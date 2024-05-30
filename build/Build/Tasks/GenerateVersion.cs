@@ -41,10 +41,11 @@ namespace Build
         {
             if (context.ProjectSpecifics != null)
             {
-                // Get the assembly version from the csproj file
+
+                // Get the version from the csproj file
                 return context.XmlPeek(
                     Path.Combine(context.Environment.WorkingDirectory.FullPath, context.ProjectSpecifics.MainProject),
-                    "//AssemblyVersion");
+                    "//VersionPrefix");
             }
             else
             {
