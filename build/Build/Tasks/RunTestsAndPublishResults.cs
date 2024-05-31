@@ -91,7 +91,6 @@ namespace Build
         private static void GenerateCoverageReport(Context context, string testArtifactsPath)
         {
             // In Multi-Target builds, the GlobPatern must be updated to include the target framework
-            // Example: new GlobPattern($"{testArtifactsPath}/*.coverage.net8.0.xml")
             context.ReportGenerator(new GlobPattern($"{testArtifactsPath}/*.coverage.net8.0.xml"), Path.Combine(testArtifactsPath, "coverage"), new ReportGeneratorSettings()
             {
                 ReportTypes = new List<ReportGeneratorReportType>()
