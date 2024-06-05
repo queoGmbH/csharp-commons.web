@@ -148,7 +148,7 @@ stages:
     pool: 
       vmImage: 'ubuntu-latest'
     # Creates an environment if it doesn't exist. Seems not to work. the environment must exist.
-    environment: Persistence-BetaChannel
+    environment: Web-BetaChannel
     strategy:
       # Default deployment strategy, more coming...
       runOnce:
@@ -164,7 +164,7 @@ stages:
     pool: 
       vmImage: 'ubuntu-latest'
     # Creates an environment if it doesn't exist.
-    environment: Persistence-ReleaseChannel
+    environment: Web-ReleaseChannel
     strategy:
       # Default deployment strategy, more coming...
       runOnce:
