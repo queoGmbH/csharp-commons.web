@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Web", "src\Commons.Web\Commons.Web.csproj", "{E6AD3E68-94D6-4750-A48E-F770C9071DA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Web.ExceptionHandling", "src\Commons.Web.ExceptionHandling\Commons.Web.ExceptionHandling.csproj", "{E6AD3E68-94D6-4750-A48E-F770C9071DA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons.Web.Tests", "tests\Commons.Web.Tests\Commons.Web.Tests.csproj", "{051F0A22-8A89-4701-B041-0EC42B458B70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Web.ModelBinding", "src\Commons.Web.ModelBinding\Commons.Web.ModelBinding.csproj", "{7F47186F-AF82-4A96-BDB8-F6686DDDA9C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Web.ExceptionHandling.Tests", "tests\Commons.Web.ExceptionHandling.Tests\Commons.Web.ExceptionHandling.Tests.csproj", "{051F0A22-8A89-4701-B041-0EC42B458B70}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Web.ModelBinding.Tests", "tests\Commons.Web.ModelBinding.Tests\Commons.Web.ModelBinding.Tests.csproj", "{52B60B53-F140-42E6-B2FF-13B636327ABD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +21,18 @@ Global
 		{E6AD3E68-94D6-4750-A48E-F770C9071DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6AD3E68-94D6-4750-A48E-F770C9071DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6AD3E68-94D6-4750-A48E-F770C9071DA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F47186F-AF82-4A96-BDB8-F6686DDDA9C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F47186F-AF82-4A96-BDB8-F6686DDDA9C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F47186F-AF82-4A96-BDB8-F6686DDDA9C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F47186F-AF82-4A96-BDB8-F6686DDDA9C6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{051F0A22-8A89-4701-B041-0EC42B458B70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{051F0A22-8A89-4701-B041-0EC42B458B70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{051F0A22-8A89-4701-B041-0EC42B458B70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{051F0A22-8A89-4701-B041-0EC42B458B70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52B60B53-F140-42E6-B2FF-13B636327ABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52B60B53-F140-42E6-B2FF-13B636327ABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52B60B53-F140-42E6-B2FF-13B636327ABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52B60B53-F140-42E6-B2FF-13B636327ABD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

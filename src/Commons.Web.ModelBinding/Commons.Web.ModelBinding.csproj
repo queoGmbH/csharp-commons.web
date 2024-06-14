@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net8.0</TargetFrameworks>
+		<Nullable>enable</Nullable>
+		<VersionPrefix>1.0.1</VersionPrefix>
+		<AssemblyName>Queo.Commons.Web.ModelBinding</AssemblyName>
+		<RootNamespace>Queo.Commons.Web.ModelBinding</RootNamespace>
+		<Authors>queo/software/csharp</Authors>
+		<Company>queo GmbH</Company>
+		<Copyright>2024 queo GmbH</Copyright>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<Description>Queo.Commons.Web.ModelBinding can be used for ModelBinding Ids to existing entities with an web app or web api.</Description>
+		<PackageId>Queo.Commons.Web.ModelBinding</PackageId>
+		<PackageLicenseUrl>https://licenses.nuget.org/MIT</PackageLicenseUrl>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/queoGmbH/csharp-commons.web</RepositoryUrl>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ModelBinding\" />
+	</ItemGroup>
+</Project>
