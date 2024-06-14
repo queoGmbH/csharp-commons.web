@@ -7,7 +7,7 @@ namespace Build.Tasks
 {
     /// <summary>
     /// Task for building the NuGet package.
-    /// If you want to include this task in your build flow you need to set following fields beside the General field in your context: ProjectSpecifics.
+    /// If you want to include this task in your build flow you need to set following fields beside the General field in your context: SolutionSpecifics.
     /// </summary>
     public sealed class BuildNuGetPackage : FrostingTask<Context>
     {
@@ -19,14 +19,17 @@ namespace Build.Tasks
         {
             string versionSuffix = GetVersionSuffix(context);
 
-            // Pack the main project using the DotNetPack tool.
-            context.DotNetPack(Path.Combine(context.Environment.WorkingDirectory.FullPath, context.ProjectSpecifics.MainProject),
-                new Cake.Common.Tools.DotNet.Pack.DotNetPackSettings()
-                {
-                    Configuration = context.ProjectSpecifics.BuildConfig,
-                    OutputDirectory = context.General.ArtifactsDir,
-                    VersionSuffix = versionSuffix,
-                });
+            foreach (ProjectToBuild projectToBuild in context.SolutionSpecifics.ProjectsToBuild)
+            {
+                // Pack the project using the DotNetPack tool.
+                context.DotNetPack(Path.Combine(context.Environment.WorkingDirectory.FullPath, projectToBuild.ProjectPath),
+                    new Cake.Common.Tools.DotNet.Pack.DotNetPackSettings()
+                    {
+                        Configuration = projectToBuild.BuildConfig,
+                        OutputDirectory = context.General.ArtifactsDir,
+                        VersionSuffix = versionSuffix,
+                    });
+            }
         }
 
         /// <summary>

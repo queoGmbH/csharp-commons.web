@@ -17,7 +17,7 @@ namespace Build
 {
     /// <summary>
     /// Task for running tests and publishing the results.
-    /// If you want to include this task in your build flow you need to set following fields beside the General field in your context: ProjectSpecifics, Tests.
+    /// If you want to include this task in your build flow you need to set following fields beside the General field in your context: SolutionSpecifics, Tests.
     /// </summary>
     [TaskName("RunTestsAndPublishResults")]
     public sealed class RunTestsAndPublishResults : FrostingTask<Context>
@@ -130,13 +130,7 @@ namespace Build
         private IDictionary<string, string> GetTestProjects(Context context)
         {
             // Define a dictionary to store the test project names and their corresponding paths
-            return new Dictionary<string, string>
-                {
-                    {
-                        context.Tests.TestProjectName,
-                        Path.Combine(context.Environment.WorkingDirectory.FullPath, context.Tests.TestProject)
-                    }
-                };
+            return context.Tests.TestProjects;
         }
 
         /// <summary>
@@ -151,7 +145,7 @@ namespace Build
             DotNetTestSettings dotNetTestSettings = new()
             {
                 VSTestReportPath = vsTestReportPath,
-                Configuration = context.ProjectSpecifics.BuildConfig,
+                Configuration = context.Tests.BuildConfig,
                 ArgumentCustomization = delegate (ProcessArgumentBuilder argument)
                 {
                     argument.Append(new TextArgument(coverletArgs));

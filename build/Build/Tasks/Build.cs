@@ -16,21 +16,24 @@ namespace Build
     {
         /// <summary>
         /// Runs the task to build the main project.
-        /// If you want to include this task in your build flow you need to set following fields beside the General field in your context: ProjectSpecifics.
+        /// If you want to include this task in your build flow you need to set following fields beside the General field in your context: SolutionSpecifics.
         /// </summary>
         /// <param name="context"></param>
         public override void Run(Context context)
         {
             string versionSuffix = GetVersionSuffix(context);
 
-            // Build the main project using the DotNetBuild tool.
-            context.DotNetBuild(
-                Path.Combine(context.Environment.WorkingDirectory.FullPath, context.ProjectSpecifics.MainProject),
-                new DotNetBuildSettings
-                {
-                    VersionSuffix = versionSuffix,
-                    Configuration = context.ProjectSpecifics.BuildConfig
-                });
+            foreach (ProjectToBuild projectToBuild in context.SolutionSpecifics.ProjectsToBuild)
+            {
+                // Build project using the DotNetBuild tool.
+                context.DotNetBuild(
+                    Path.Combine(context.Environment.WorkingDirectory.FullPath, projectToBuild.ProjectPath),
+                    new DotNetBuildSettings
+                    {
+                        VersionSuffix = versionSuffix,
+                        Configuration = projectToBuild.BuildConfig
+                    });
+            }
         }
 
         /// <summary>

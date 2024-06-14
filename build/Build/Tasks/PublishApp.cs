@@ -14,7 +14,7 @@ namespace Build
     {
         /// <summary>
         /// Runs the task to publish the application.
-        /// If you want to include this task in your build flow you need to set following fields beside the General field in your context: ProjectSpecifics.
+        /// If you want to include this task in your build flow you need to set following fields beside the General field in your context: SolutionSpecifics.
         /// </summary>
         /// <param name="context"></param>
         public override void Run(Context context)
@@ -31,9 +31,11 @@ namespace Build
                 OutputDirectory = context.General.ArtifactsDir,
                 VersionSuffix = versionSuffix
             };
-
-            // Publish the main project using the DotNetPublish tool.
-            context.DotNetPublish(context.ProjectSpecifics.MainProject, dotNetCorePublishSettings);
+            foreach (ProjectToBuild projectToBuild in context.SolutionSpecifics.ProjectsToBuild)
+            {
+                // Publish the project using the DotNetPublish tool.
+                context.DotNetPublish(projectToBuild.ProjectPath, dotNetCorePublishSettings);
+            }
         }
 
         /// <summary>
