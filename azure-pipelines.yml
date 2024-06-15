@@ -28,11 +28,11 @@ stages:
     
     steps:
     # .NET Core 8.0 SDK installieren
-    - task: UseDotNet@2
-      displayName: 'Use .NET Core sdk'
-      inputs:
-        packageType: sdk
-        version: 8.0.101
+    #- task: UseDotNet@2
+    #  displayName: 'Use .NET Core sdk'
+    #  inputs:
+    #    packageType: sdk
+    #    version: 8.0.101
     
     - task: DotNetCoreCLI@2
       inputs:
@@ -52,11 +52,11 @@ stages:
 
     steps:
     # .NET Core 8.0 installieren, da es noch nicht per default installiert ist
-    - task: UseDotNet@2
-      displayName: 'Use .NET Core sdk'
-      inputs:
-        packageType: sdk
-        version: 8.0.x 
+    #- task: UseDotNet@2
+    #  displayName: 'Use .NET Core sdk'
+    #  inputs:
+    #    packageType: sdk
+    #    version: 8.0.x 
     
     - task: DotNetCoreCLI@2
       inputs:
@@ -79,11 +79,11 @@ stages:
 
     steps:
     # .NET Core 8.0 SDK installieren
-    - task: UseDotNet@2
-      displayName: 'Use .NET Core sdk'
-      inputs:
-        packageType: sdk
-        version: 8.0.101
+    #- task: UseDotNet@2
+    #  displayName: 'Use .NET Core sdk'
+    #  inputs:
+    #    packageType: sdk
+    #    version: 8.0.101
 
     - task: DotNetCoreCLI@2
       inputs:
