@@ -1,4 +1,5 @@
 using Cake.Core;
+using System.Collections.Generic;
 
 namespace Build
 {
@@ -17,9 +18,9 @@ namespace Build
         }
 
         /// <summary>
-        /// Gets the project-specific settings.
+        /// Gets the solution-specific settings.
         /// </summary>
-        public ProjectSpecifics ProjectSpecifics { get; } = new();
+        public SolutionSpecifics SolutionSpecifics { get; } = new();
 
         /// <summary>
         /// Gets the documentation settings.
@@ -37,9 +38,9 @@ namespace Build
         public Tests Tests { get; } = new();
     }
     /// <summary>
-    /// Represents the project-specific settings.
+    /// Represents the solution-specific settings.
     /// </summary>
-    public class ProjectSpecifics
+    public class SolutionSpecifics
     {
         /// <summary>
         /// Gets the name of the solution.
@@ -47,14 +48,37 @@ namespace Build
         public string SolutionName { get; } = "Commons.Web.sln";
 
         /// <summary>
-        /// Gets the build configuration.
+        /// Gets the projects to build within the solution.
         /// </summary>
-        public string BuildConfig { get; } = "Release";
+        public List<ProjectToBuild> ProjectsToBuild { get; } = new List<ProjectToBuild>() {
+            new ProjectToBuild("Release", @"src\Commons.Web.ExceptionHandling\Commons.Web.ExceptionHandling.csproj"),
+            new ProjectToBuild("Release", @"src\Commons.Web.ModelBinding\Commons.Web.ModelBinding.csproj")
+        };
+    }
+
+    /// <summary>
+    /// Represents a project to build within the solution.
+    /// </summary>
+    public class ProjectToBuild
+    {
+        /// <summary>
+        /// Ctor.
+        /// </summary>
+        public ProjectToBuild(string buildConfig, string project)
+        {
+            BuildConfig = buildConfig;
+            ProjectPath = project;
+        }
 
         /// <summary>
-        /// Gets the path to the main project file.
+        /// Gets the build configuration for the project.
         /// </summary>
-        public string MainProject { get; } = @"src\Commons.Web\Commons.Web.csproj";
+        public string BuildConfig { get; }
+
+        /// <summary>
+        /// Gets the path to the project file.
+        /// </summary>
+        public string ProjectPath { get; }
     }
 
     /// <summary>
@@ -63,14 +87,13 @@ namespace Build
     public class Tests
     {
         /// <summary>
-        /// Gets the name of the test project.
+        /// Gets the test projects.
         /// </summary>
-        public string TestProjectName { get; } = "Commons.Web.Tests";
-
-        /// <summary>
-        /// Gets the path to the test project file.
-        /// </summary>
-        public string TestProject { get; } = @"tests\Commons.Web.Tests\Commons.Web.Tests.csproj";
+        public Dictionary<string, string> TestProjects { get; } = new Dictionary<string, string>() {
+            { "Commons.Web.ExceptionHandling.Tests", @"tests\Commons.Web.ExceptionHandling.Tests\Commons.Web.ExceptionHandling.Tests.csproj" },
+            { "Commons.Web.ModelBinding.Tests", @"tests\Commons.Web.ModelBinding.Tests\Commons.Web.ModelBinding.Tests.csproj" }
+        };
+        public string BuildConfig { get; } = "Release";
     }
 
     /// <summary>
