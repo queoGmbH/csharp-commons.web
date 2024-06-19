@@ -31,8 +31,8 @@ namespace Build.Common.Services.Impl
                         build = string.Empty;
                         break;
                     default:
-                        logInformation.Invoke("Remote Branch - es wird der Branchname + Buildnummer angefügt.");
-                        tag = _branchService.Clean(branchName);
+                        logInformation.Invoke("Remote Branch - es wird Beta + Buildnummer angefügt.");
+                        tag = "beta";
                         build = buildNumber;
                         break;
                 }
