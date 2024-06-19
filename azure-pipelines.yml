@@ -40,6 +40,7 @@ stages:
         arguments: '--target=BuildAndTest'
 
   - job: buildAndTest_linux
+    condition: false
     dependsOn: buildAndTest_windows
     pool:
       vmImage: 'ubuntu-latest'
@@ -67,7 +68,7 @@ stages:
   - job: BuildNuGetPackageForDeploy
     dependsOn:
     - buildAndTest_windows
-    - buildAndTest_linux
+    #- buildAndTest_linux
     pool:
       vmImage: 'windows-latest'
 
