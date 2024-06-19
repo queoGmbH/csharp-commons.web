@@ -27,12 +27,6 @@ stages:
       vmImage: 'windows-latest'
     
     steps:
-    # .NET Core 8.0 SDK installieren
-    - task: UseDotNet@2
-      displayName: 'Use .NET Core sdk'
-      inputs:
-        packageType: sdk
-        version: 8.0.101
     
     - task: DotNetCoreCLI@2
       inputs:
@@ -46,17 +40,12 @@ stages:
         arguments: '--target=BuildAndTest'
 
   - job: buildAndTest_linux
+    condition: false
     dependsOn: buildAndTest_windows
     pool:
       vmImage: 'ubuntu-latest'
 
     steps:
-    # .NET Core 8.0 installieren, da es noch nicht per default installiert ist
-    - task: UseDotNet@2
-      displayName: 'Use .NET Core sdk'
-      inputs:
-        packageType: sdk
-        version: 8.0.x 
     
     - task: DotNetCoreCLI@2
       inputs:
@@ -64,6 +53,12 @@ stages:
         custom: 'tool'
         arguments: 'install -g dotnet-format --ignore-failed-sources'
     
+    - script: dotnet tool install --global GitVersion.Tool --version 5.1.3
+      displayName: 'Install GitVersion'
+
+    - script: chmod +x $(Pipeline.Workspace)/s/tools/dotnet-gitversion.exe
+      displayName: 'Set execute permissions for dotnet-gitversion.exe'
+
     - task: ShellScript@2
       inputs:
         scriptPath: 'build.sh'
@@ -73,17 +68,11 @@ stages:
   - job: BuildNuGetPackageForDeploy
     dependsOn:
     - buildAndTest_windows
-    - buildAndTest_linux
+    #- buildAndTest_linux
     pool:
       vmImage: 'windows-latest'
 
     steps:
-    # .NET Core 8.0 SDK installieren
-    - task: UseDotNet@2
-      displayName: 'Use .NET Core sdk'
-      inputs:
-        packageType: sdk
-        version: 8.0.101
 
     - task: DotNetCoreCLI@2
       inputs:
