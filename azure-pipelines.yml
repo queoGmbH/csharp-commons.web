@@ -66,8 +66,9 @@ stages:
     
     - script: dotnet tool install --global GitVersion.Tool --version 5.1.3
       displayName: 'Install GitVersion'
-   - script: chmod +x $(Pipeline.Workspace)/home/vsts/work/1/s/tools/dotnet-gitversion.exe
-  displayName: 'Set execute permissions for dotnet-gitversion.exe'
+
+    - script: chmod +x $(Pipeline.Workspace)/home/vsts/work/1/s/tools/dotnet-gitversion.exe
+      displayName: 'Set execute permissions for dotnet-gitversion.exe'
 
     - task: ShellScript@2
       inputs:
