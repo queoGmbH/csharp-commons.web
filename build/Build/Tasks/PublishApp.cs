@@ -33,8 +33,11 @@ namespace Build
             };
             foreach (ProjectToBuild projectToBuild in context.SolutionSpecifics.ProjectsToBuild)
             {
-                // Publish the project using the DotNetPublish tool.
-                context.DotNetPublish(projectToBuild.ProjectPath, dotNetCorePublishSettings);
+                if (projectToBuild.ShouldBePublished)
+                {
+                    // Publish the project using the DotNetPublish tool.
+                    context.DotNetPublish(projectToBuild.ProjectPath, dotNetCorePublishSettings);
+                }
             }
         }
 
