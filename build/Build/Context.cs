@@ -51,8 +51,8 @@ namespace Build
         /// Gets the projects to build within the solution.
         /// </summary>
         public List<ProjectToBuild> ProjectsToBuild { get; } = new List<ProjectToBuild>() {
-            new ProjectToBuild("Release", @"src\Commons.Web.ExceptionHandling\Commons.Web.ExceptionHandling.csproj"),
-            new ProjectToBuild("Release", @"src\Commons.Web.ModelBinding\Commons.Web.ModelBinding.csproj")
+            new ProjectToBuild("Release", @"src\Commons.Web.ExceptionHandling\Commons.Web.ExceptionHandling.csproj", false),
+            new ProjectToBuild("Release", @"src\Commons.Web.ModelBinding\Commons.Web.ModelBinding.csproj", false)
         };
     }
 
@@ -64,10 +64,11 @@ namespace Build
         /// <summary>
         /// Ctor.
         /// </summary>
-        public ProjectToBuild(string buildConfig, string project)
+        public ProjectToBuild(string buildConfig, string project, bool shouldBePublished)
         {
             BuildConfig = buildConfig;
             ProjectPath = project;
+            ShouldBePublished = shouldBePublished;
         }
 
         /// <summary>
@@ -79,6 +80,11 @@ namespace Build
         /// Gets the path to the project file.
         /// </summary>
         public string ProjectPath { get; }
+
+        /// <summary>
+        /// Gets the flag indication whether the project should be published.
+        /// </summary>
+        public bool ShouldBePublished { get; }
     }
 
     /// <summary>
