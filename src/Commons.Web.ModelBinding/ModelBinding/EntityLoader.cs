@@ -7,11 +7,18 @@ namespace Commons.Web.ModelBinding
 {
     public class EntityLoader<TEntity> : IEntityLoader<TEntity> where TEntity : Entity
     {
+        private readonly IServiceProvider _serviceProvider;
+
         /// <summary>
-        /// Gets the entity with the given business ID.
+        /// ctor.
         /// </summary>
-        /// <param name="businessId"></param>
-        /// <returns></returns>
+        /// <param name="serviceProvider"></param>
+        public EntityLoader(IServiceProvider serviceProvider)
+        {
+            _serviceProvider = serviceProvider;
+        }
+
+        /// <inheritdoc />
         public TEntity GetEntityByBusinessId(Guid businessId)
         {
             IEntityDao<TEntity> dao = GetDao();
@@ -34,24 +41,13 @@ namespace Commons.Web.ModelBinding
             // Get the full name of the entity class
             string entityTypeName = typeof(TEntity).Name;
 
-            // Create the name of the DAO class
-            string daoClassName = $"{entityTypeName}Dao";
+            // Build the generic type using Type.MakeGenericType
+            Type genericDao = typeof(IEntityDao<>).MakeGenericType(typeof(TEntity));
 
-            // Search all loaded assemblies for the DAO class
-            foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                foreach (var type in assembly.GetTypes())
-                {
-                    if (type.Name == daoClassName && typeof(IEntityDao<TEntity>).IsAssignableFrom(type))
-                    {
-                        // Create an instance of the DAO class
-                        object daoInstance = Activator.CreateInstance(type)!;
+            IEntityDao<TEntity>? daoInstance = _serviceProvider.GetService(genericDao) as IEntityDao<TEntity>;
 
-                        // Return the DAO instance
-                        return (IEntityDao<TEntity>)daoInstance;
-                    }
-                }
-            }
+            if (daoInstance != null) return daoInstance;
+
             // If the DAO class was not found, throw an exception
             throw new ModelBindingException($"No DAO defined for entity type {entityTypeName}", 400);
         }

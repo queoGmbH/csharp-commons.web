@@ -1,6 +1,7 @@
 ﻿using System;
 using NJsonSchema;
 using NJsonSchema.Generation;
+
 using Queo.Commons.Persistence;
 
 namespace Commons.Web.ModelBinding.SwaggerSchemaFilter
@@ -14,7 +15,7 @@ namespace Commons.Web.ModelBinding.SwaggerSchemaFilter
         public void Process(SchemaProcessorContext context)
         {
             // Check if the context type is assignable from Entity
-            if (typeof(Entity).IsAssignableFrom(context.Type))
+            if (typeof(Entity).IsAssignableFrom(context.ContextualType))
             {
                 // Set the schema type to string
                 context.Schema.Type = JsonObjectType.String;

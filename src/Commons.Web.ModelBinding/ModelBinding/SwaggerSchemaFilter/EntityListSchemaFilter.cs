@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using NJsonSchema;
 using NJsonSchema.Generation;
+
 using Queo.Commons.Persistence;
 
 namespace Commons.Web.ModelBinding.SwaggerSchemaFilter

@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+
 using Queo.Commons.Persistence;
+
+using Commons.Web.ModelBinding.ExceptionHandling;
 
 namespace Commons.Web.ModelBinding
 {
@@ -25,7 +28,9 @@ namespace Commons.Web.ModelBinding
             }
             else
             {
-                EntityLoader<TEntity> _entityLoader = new();
+                var entityLoaderType = typeof(EntityLoader<>).MakeGenericType(typeToConvert);
+                dynamic? _entityLoader = Activator.CreateInstance(entityLoaderType) ??
+                    throw new ModelBindingException($"No entity loader defined for entity type {typeToConvert.Name}", 400);
                 foreach (Guid businessId in businessIds)
                 {
                     resultList.Add(_entityLoader.GetEntityByBusinessId(businessId));

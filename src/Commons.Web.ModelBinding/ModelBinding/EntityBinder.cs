@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+
 using Queo.Commons.Checks;
 using Queo.Commons.Persistence;
+
 using Commons.Web.ModelBinding.ExceptionHandling;
 
 namespace Commons.Web.ModelBinding
@@ -31,10 +33,10 @@ namespace Commons.Web.ModelBinding
             {
                 throw new ModelBindingException("Value must not be null or empty.", 400);
             }
-            System.Guid businessId = TryParseGuid(value);
+            Guid businessId = TryParseGuid(value);
             try
             {
-                EntityLoader<TEntity> entityLoader = new EntityLoader<TEntity>();
+                IEntityLoader<TEntity> entityLoader = new EntityLoader<TEntity>(bindingContext.HttpContext.RequestServices);
                 Entity model = entityLoader.GetEntityByBusinessId(businessId);
                 bindingContext.Result = ModelBindingResult.Success(model);
                 return Task.CompletedTask;

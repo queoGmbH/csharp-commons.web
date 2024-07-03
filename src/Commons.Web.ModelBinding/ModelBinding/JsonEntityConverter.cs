@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Commons.Web.ModelBinding.ExceptionHandling;
+
 using Queo.Commons.Persistence;
+
+using Commons.Web.ModelBinding.ExceptionHandling;
 
 namespace Commons.Web.ModelBinding
 {
