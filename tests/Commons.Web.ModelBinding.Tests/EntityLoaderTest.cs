@@ -9,7 +9,7 @@ using Queo.Commons.Persistence;
 using Commons.Web.ModelBinding.ExceptionHandling;
 
 namespace Commons.Web.ModelBinding.Tests
-{ 
+{
     [TestFixture]
     public class EntityLoaderTest
     {

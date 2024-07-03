@@ -6,12 +6,12 @@ using Queo.Commons.Persistence.Exceptions;
 namespace Commons.Web.ModelBinding.Tests.Persistence
 {
 
-    public class TestEntityDao: ITestEntityDao 
+    public class TestEntityDao : ITestEntityDao
     {
         private readonly List<TestEntity> _entities = [
             new TestEntity(Guid.Parse("1b8fe094-ff53-47ad-9e5d-c6690a13844a"), "The First TestEntity", 1),
             new TestEntity(Guid.Parse("d9ef4cb1-890d-42c3-8828-86cff54c9adc"), "The Second TestEntity", 2),
-            ];
+        ];
 
         ///<inheritdoc />
         public TestEntityDao()
