@@ -52,7 +52,8 @@ namespace Build
         /// </summary>
         public List<ProjectToBuild> ProjectsToBuild { get; } = new List<ProjectToBuild>() {
             new ProjectToBuild("Release", @"src\Commons.Web.ExceptionHandling\Commons.Web.ExceptionHandling.csproj"),
-            new ProjectToBuild("Release", @"src\Commons.Web.ModelBinding\Commons.Web.ModelBinding.csproj")
+            new ProjectToBuild("Release", @"src\Commons.Web.ModelBinding\Commons.Web.ModelBinding.csproj"),
+            new ProjectToBuild("Release", @"src\Commons.Web.Security\Commons.Web.Security.csproj"),
         };
     }
 
