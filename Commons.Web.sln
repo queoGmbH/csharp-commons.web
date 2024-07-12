@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Web.ExceptionHandli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Web.ModelBinding.Tests", "tests\Commons.Web.ModelBinding.Tests\Commons.Web.ModelBinding.Tests.csproj", "{52B60B53-F140-42E6-B2FF-13B636327ABD}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Web.Security.Tests", "tests\Commons.Web.Security.Tests\Commons.Web.Security.Tests.csproj", "{A4028336-11FC-46E2-9D1C-9FD73EB88810}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{52B60B53-F140-42E6-B2FF-13B636327ABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52B60B53-F140-42E6-B2FF-13B636327ABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52B60B53-F140-42E6-B2FF-13B636327ABD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4028336-11FC-46E2-9D1C-9FD73EB88810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4028336-11FC-46E2-9D1C-9FD73EB88810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4028336-11FC-46E2-9D1C-9FD73EB88810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4028336-11FC-46E2-9D1C-9FD73EB88810}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
