@@ -92,7 +92,8 @@ namespace Build
         /// </summary>
         public Dictionary<string, string> TestProjects { get; } = new Dictionary<string, string>() {
             { "Commons.Web.ExceptionHandling.Tests", @"tests\Commons.Web.ExceptionHandling.Tests\Commons.Web.ExceptionHandling.Tests.csproj" },
-            { "Commons.Web.ModelBinding.Tests", @"tests\Commons.Web.ModelBinding.Tests\Commons.Web.ModelBinding.Tests.csproj" }
+            { "Commons.Web.ModelBinding.Tests", @"tests\Commons.Web.ModelBinding.Tests\Commons.Web.ModelBinding.Tests.csproj" },
+            { "Commons.Web.Security.Tests", @"tests\Commons.Web.Security.Tests\Commons.Web.Security.Tests.csproj" }
         };
         public string BuildConfig { get; } = "Release";
     }
