@@ -1,5 +1,6 @@
-using Commons.Web.Security.SecurityContextAccessor;
 using Microsoft.Extensions.DependencyInjection;
+
+using Commons.Web.Security.SecurityContextAccessor;
 
 namespace Commons.Web.Security
 {

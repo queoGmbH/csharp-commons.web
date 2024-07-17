@@ -1,5 +1,4 @@
 namespace Commons.Web.Security.SecurityContextAccessor
-
 {
     /// <summary>
     /// Represents an accessor for the security context.

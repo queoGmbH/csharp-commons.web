@@ -11,8 +11,8 @@ namespace Commons.Web.Security
     /// </summary>
     public class SecurityContextHolder : ISecurityContextHolder, ISecurityContextInvalidator
     {
-        private readonly ReaderWriterLockSlim _readerWriterLockSlim = new ReaderWriterLockSlim();
-        private Dictionary<string, ISecurityContext> _securityContextes = new Dictionary<string, ISecurityContext>();
+        private readonly ReaderWriterLockSlim _readerWriterLockSlim = new();
+        private Dictionary<string, ISecurityContext> _securityContextes = [];
         private readonly Guid _identifier = Guid.NewGuid();
 
         /// <summary>
