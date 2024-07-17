@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Security.Principal;
 
-namespace Commons.Web.Security 
+namespace Commons.Web.Security
 {
     /// <summary>
     /// Represents a factory for creating security contexts.
