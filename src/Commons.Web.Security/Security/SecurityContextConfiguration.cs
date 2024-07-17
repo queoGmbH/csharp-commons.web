@@ -17,9 +17,8 @@ namespace Commons.Web.Security
         /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
         public static void AddSecurityContextServices<TSecurityContext, TSecurityContextFactory>(IServiceCollection services) where TSecurityContext : class, ISecurityContext where TSecurityContextFactory : class, ISecurityContextFactory
         {
-            // we need to register the same instance of SecurityContextHolder for the ISecurityContextHolder and ISecurityContextInvalidator
+            // We need to register the same instance of SecurityContextHolder for the ISecurityContextHolder and ISecurityContextInvalidator
             services.AddSingleton<SecurityContextHolder>();
-
             services.AddSingleton<ISecurityContextHolder, SecurityContextHolder>(sp => sp.GetRequiredService<SecurityContextHolder>());
             services.AddSingleton<ISecurityContextInvalidator, SecurityContextHolder>(sp => sp.GetRequiredService<SecurityContextHolder>());
             services.AddScoped<SecurityContextCreator>();

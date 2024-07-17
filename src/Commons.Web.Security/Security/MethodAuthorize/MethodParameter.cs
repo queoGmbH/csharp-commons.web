@@ -61,15 +61,11 @@ namespace Commons.Web.Security.MethodAuthorize
             }
             MethodParameter other = (MethodParameter)obj;
 
-            if (!Equals(ParameterName, other.ParameterName))
-            {
-                return false;
-            }
-            if (ParameterType != other.ParameterType)
-            {
-                return false;
-            }
-            if (!Equals(ParameterValue, other.ParameterValue))
+            bool methodParameterMatchRequirements = Equals(ParameterName, other.ParameterName) &&
+                                                    ParameterType == other.ParameterType &&
+                                                    Equals(ParameterValue, other.ParameterValue);
+
+            if (!methodParameterMatchRequirements)
             {
                 return false;
             }

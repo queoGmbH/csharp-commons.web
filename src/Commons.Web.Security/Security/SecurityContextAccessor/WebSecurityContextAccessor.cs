@@ -40,7 +40,7 @@ namespace Commons.Web.Security.SecurityContextAccessor
             ClaimsPrincipal? principal = httpContext.User;
             if (principal == null)
             {
-                throw new SecurityException("There is no HttpContext available, when trying to get the security context.");
+                throw new SecurityException("There is no Principal available, when trying to get the provided user.");
             }
             ISecurityContext securityContext = securityContextHolder.GetSecurityContext(principal);
             return securityContext;

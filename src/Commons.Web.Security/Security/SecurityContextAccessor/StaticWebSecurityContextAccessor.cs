@@ -13,7 +13,7 @@ namespace Commons.Web.Security.SecurityContextAccessor
         /// <param name="securityContextCreator">The security context creator.</param>
         public StaticWebSecurityContextAccessor(SecurityContextCreator securityContextCreator)
         {
-            // Wir initialisieren es mit einem leeren Security Kontext.
+            // We initialize it with an empty security context.
             _securityContext = securityContextCreator.CreateEmpty();
         }
 
