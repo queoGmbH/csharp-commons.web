@@ -1,19 +1,20 @@
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Commons.Web.Security.ActionDescription;
-
-/// <summary>
-/// Provides configuration for the action decorator.
-/// </summary>
-public static class ActionDecoratorConfiguration
+namespace Commons.Web.Security.ActionDescription
 {
     /// <summary>
-    /// Adds the required services for the action decorator.
-    /// The filter must be added when configuring the controller for it to work.
+    /// Provides configuration for the action decorator.
     /// </summary>
-    /// <param name="services">The service collection.</param>
-    public static void AddActionDecorator(this IServiceCollection services)
+    public static class ActionDecoratorConfiguration
     {
-        services.AddScoped<ActionEvaluatorBuilderFactory>();
+        /// <summary>
+        /// Adds the required services for the action decorator.
+        /// The filter must be added when configuring the controller for it to work.
+        /// </summary>
+        /// <param name="services">The service collection.</param>
+        public static void AddActionDecorator(this IServiceCollection services)
+        {
+            services.AddScoped<ActionEvaluatorBuilderFactory>();
+        }
     }
 }

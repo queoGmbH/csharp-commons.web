@@ -1,8 +1,8 @@
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Commons.Web.Security.SecurityContextAccessor;
 using Microsoft.AspNetCore.Http;
 
+using Commons.Web.Security.SecurityContextAccessor;
 
 namespace Commons.Web.Security
 {
