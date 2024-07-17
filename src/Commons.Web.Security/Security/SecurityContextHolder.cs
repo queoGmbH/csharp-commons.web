@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Security;
 using System.Security.Principal;
 using System.Threading;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Xml.Linq;
+using System.Xml;
 
 namespace Commons.Web.Security
 {
@@ -28,14 +31,11 @@ namespace Commons.Web.Security
         /// <exception cref="SecurityException">Thrown when the principal's identity is null or empty.</exception>
         public ISecurityContext GetSecurityContext(IPrincipal principal)
         {
-            if (principal.Identity == null || string.IsNullOrEmpty(principal.Identity.Name))
-            {
-                throw new SecurityException($"{nameof(principal.Identity.Name)} can't be empty.");
-            }
+            CheckPrincipalIdentityAndName(principal);
             _readerWriterLockSlim.EnterReadLock();
             try
             {
-                _securityContextes.TryGetValue(principal.Identity.Name, out ISecurityContext? securityContext);
+                _securityContextes.TryGetValue(principal.Identity!.Name!, out ISecurityContext? securityContext);
                 if (securityContext == null)
                 {
                     throw new SecurityException($"There is no security context for the principal {principal.Identity.Name}.");
@@ -48,6 +48,14 @@ namespace Commons.Web.Security
             }
         }
 
+        private static void CheckPrincipalIdentityAndName(IPrincipal principal)
+        {
+            if (principal.Identity == null || string.IsNullOrEmpty(principal.Identity.Name))
+            {
+                throw new SecurityException("The principal must provide an identity and a unique name.");
+            }
+        }
+
         /// <summary>
         /// Checks if the security context holder has a security context for the specified principal.
         /// </summary>
@@ -56,14 +64,12 @@ namespace Commons.Web.Security
         /// <exception cref="SecurityException">Thrown when the principal's identity is null or empty.</exception>
         public bool Has(IPrincipal principal)
         {
-            if (principal.Identity == null || string.IsNullOrEmpty(principal.Identity.Name))
-            {
-                throw new SecurityException("The principal must provide an identity and a unique name.");
-            }
+            CheckPrincipalIdentityAndName(principal);
+
             _readerWriterLockSlim.EnterReadLock();
             try
             {
-                return _securityContextes.ContainsKey(principal.Identity.Name);
+                return _securityContextes.ContainsKey(principal.Identity!.Name!);
             }
             finally
             {

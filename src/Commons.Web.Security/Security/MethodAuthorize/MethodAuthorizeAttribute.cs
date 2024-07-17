@@ -47,7 +47,7 @@ namespace Commons.Web.Security.MethodAuthorize
         /// <param name="context">The context.</param>
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            // get the object with name "methodSecurityRoot" from the service collection
+            // Get the object with name "methodSecurityRoot" from the service collection
             object methodSecurityRoot = GetAuthorizeService(context);
             bool isAuthenticated = context.HttpContext.User.Identity?.IsAuthenticated ?? false;
             if (!isAuthenticated)
@@ -56,7 +56,7 @@ namespace Commons.Web.Security.MethodAuthorize
             }
             bool isAuthorized = false;
 
-            MethodInformation methodInformation = new MethodInformation(_methodExpression, context.ActionArguments);
+            MethodInformation methodInformation = new(_methodExpression, context.ActionArguments);
             MethodInfo matchingMethod = FindMatchingMethod(methodInformation, methodSecurityRoot);
 
             try
