@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Linq;
+
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-using Queo.Commons.Persistence;
-
 using Commons.Web.ModelBinding.ExceptionHandling;
+using Queo.Commons.Persistence;
 
 namespace Commons.Web.ModelBinding
 {
@@ -49,6 +51,7 @@ namespace Commons.Web.ModelBinding
         /// <param name="options">The calling options.</param>
         public override void Write(Utf8JsonWriter writer, TEntity value, JsonSerializerOptions options)
         {
+            // If the value is null, write a null value
             if (value == null)
             {
                 writer.WriteNullValue();
@@ -57,11 +60,30 @@ namespace Commons.Web.ModelBinding
             {
                 writer.WriteStartObject();
 
-                foreach (var prop in value.GetType().GetProperties())
-                {
-                    writer.WritePropertyName(prop.Name);
+                // Get the properties of the entity in the specified order or in the order they are defined in the class by setting the order to int.MaxValue
+                var properties = value.GetType().GetProperties()
+                    .OrderBy(prop =>
+                    {
+                        var jsonPropertyOrderAttribute = prop.GetCustomAttribute<JsonPropertyOrderAttribute>();
+                        return jsonPropertyOrderAttribute?.Order ?? int.MaxValue;
+                    });
 
+                // Write the properties of the entity to the JSON writer
+                foreach (var prop in properties)
+                {
+                    // If the property is marked with the JsonIgnore attribute, skip it
+                    var propertyShouldBeIgnored = prop.GetCustomAttribute<JsonIgnoreAttribute>();
+                    if (propertyShouldBeIgnored != null)
+                    {
+                        continue;
+                    }
+
+                    var jsonPropertyNameAttribute = prop.GetCustomAttribute<JsonPropertyNameAttribute>();
+                    var propertyName = jsonPropertyNameAttribute?.Name ?? prop.Name;
+
+                    writer.WritePropertyName(propertyName);
                     var val = prop.GetValue(value);
+
                     if (val != null)
                     {
                         JsonSerializer.Serialize(writer, val, val.GetType(), options);
