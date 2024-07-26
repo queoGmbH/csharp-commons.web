@@ -37,7 +37,7 @@ namespace Commons.Web.Security.Tests
             var result = _securityContextCreator.Create(principalMock.Object);
 
             // Assert
-            Assert.AreEqual(securityContextMock.Object, result);
+            Assert.That(result, Is.EqualTo(securityContextMock.Object));
         }
 
         [Test]
@@ -62,7 +62,7 @@ namespace Commons.Web.Security.Tests
             var result = _securityContextCreator.CreateEmpty();
 
             // Assert
-            Assert.AreEqual(emptySecurityContextMock.Object, result);
+            Assert.That(result, Is.EqualTo(emptySecurityContextMock.Object));
         }
     }
 }
