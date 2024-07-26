@@ -23,4 +23,11 @@
 	<ItemGroup>
 	  <Folder Include="ModelBinding\" />
 	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Queo.Commons.Checks" Version="3.0.1" />
+		<PackageReference Include="Queo.Commons.Persistence" Version="3.0.1" />
+		<PackageReference Include="NSwag.AspNetCore" Version="14.0.8" />
+		<PackageReference Include="NSwag.Annotations" Version="14.0.8" />
+	</ItemGroup>
 </Project>
