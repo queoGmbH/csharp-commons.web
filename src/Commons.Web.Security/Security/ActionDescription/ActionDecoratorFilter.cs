@@ -25,7 +25,7 @@ namespace Commons.Web.Security.ActionDescription
         /// <param name="context">The context of the executed action.</param>
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            // Should the result be decorated?
+            // Should the result decorated?
             if (_shouldBeDecorated)
             {
                 ObjectResult? objectResult = context.Result as ObjectResult;
@@ -34,8 +34,15 @@ namespace Commons.Web.Security.ActionDescription
                     throw new InvalidOperationException("Result is not an ObjectResult.");
                 }
                 var originalResult = objectResult.Value;
-
-                ActionDecoratorResult actionDecoratorResult = new ActionDecoratorResult(originalResult, _evaluationResults.ToDictionary(x => x.Name, v => v.CanExecute));
+                ActionDecoratorResult actionDecoratorResult;
+                if (IsDisabledByQueryParam(context))
+                {
+                    actionDecoratorResult = new ActionDecoratorResult(originalResult, []);
+                }
+                else
+                {
+                    actionDecoratorResult = new ActionDecoratorResult(originalResult, _evaluationResults.ToDictionary(x => x.Name, v => v.CanExecute));
+                }
                 objectResult.Value = actionDecoratorResult;
             }
         }
@@ -102,17 +109,16 @@ namespace Commons.Web.Security.ActionDescription
         {
             bool shouldResultDecorated = context.HttpContext.Response.HasStarted == false &&
                 context.HttpContext.Response.StatusCode >= 200 &&
-                HasActionDescriptionAttribute(context) &&
-                IsRequestedByQueryParam(context);
+                HasActionDescriptionAttribute(context);
 
             return shouldResultDecorated;
         }
 
-        private static bool IsRequestedByQueryParam(ActionExecutingContext context)
+        private static bool IsDisabledByQueryParam(ActionExecutedContext context)
         {
-            // check if there is a query parameter with name QUERY_PARAMETER_NAME and value "true"
+            // it is disabled if the query parameter is present and set to false
             return context.HttpContext.Request.Query.ContainsKey(QUERY_PARAMETER_NAME) &&
-                context.HttpContext.Request.Query[QUERY_PARAMETER_NAME] == "true";
+                context.HttpContext.Request.Query[QUERY_PARAMETER_NAME] == "false";
         }
 
         private static bool HasActionDescriptionAttribute(ActionExecutingContext context)
