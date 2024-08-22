@@ -52,7 +52,8 @@ namespace Build
         /// </summary>
         public List<ProjectToBuild> ProjectsToBuild { get; } = new List<ProjectToBuild>() {
             new ProjectToBuild("Release", @"src\Commons.Web.ExceptionHandling\Commons.Web.ExceptionHandling.csproj", false),
-            new ProjectToBuild("Release", @"src\Commons.Web.ModelBinding\Commons.Web.ModelBinding.csproj", false)
+            new ProjectToBuild("Release", @"src\Commons.Web.ModelBinding\Commons.Web.ModelBinding.csproj", false),
+            new ProjectToBuild("Release", @"src\Commons.Web.Security\Commons.Web.Security.csproj",false),
         };
     }
 
@@ -97,7 +98,8 @@ namespace Build
         /// </summary>
         public Dictionary<string, string> TestProjects { get; } = new Dictionary<string, string>() {
             { "Commons.Web.ExceptionHandling.Tests", @"tests\Commons.Web.ExceptionHandling.Tests\Commons.Web.ExceptionHandling.Tests.csproj" },
-            { "Commons.Web.ModelBinding.Tests", @"tests\Commons.Web.ModelBinding.Tests\Commons.Web.ModelBinding.Tests.csproj" }
+            { "Commons.Web.ModelBinding.Tests", @"tests\Commons.Web.ModelBinding.Tests\Commons.Web.ModelBinding.Tests.csproj" },
+            { "Commons.Web.Security.Tests", @"tests\Commons.Web.Security.Tests\Commons.Web.Security.Tests.csproj" }
         };
         public string BuildConfig { get; } = "Release";
     }
