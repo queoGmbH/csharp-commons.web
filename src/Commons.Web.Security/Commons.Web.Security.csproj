@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<TargetFrameworks>net8.0</TargetFrameworks>
 		<Nullable>enable</Nullable>
-		<VersionPrefix>1.0.1</VersionPrefix>
+		<VersionPrefix>1.0.2</VersionPrefix>
 		<AssemblyName>Queo.Commons.Web.Security</AssemblyName>
 		<RootNamespace>Queo.Commons.Web.Security</RootNamespace>
 		<Authors>queo/software/csharp</Authors>
