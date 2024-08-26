@@ -15,7 +15,7 @@ namespace Commons.Web.Security
         /// <typeparam name="TSecurityContext">The type of the security context.</typeparam>
         /// <typeparam name="TSecurityContextFactory">The type of the security context factory.</typeparam>
         /// <param name="services">The <see cref="IServiceCollection"/> to add the services to.</param>
-        public static void AddSecurityContextServices<TSecurityContext, TSecurityContextFactory>(IServiceCollection services) where TSecurityContext : class, ISecurityContext where TSecurityContextFactory : class, ISecurityContextFactory
+        public static void AddSecurityContextServices<TSecurityContext, TSecurityContextFactory>(this IServiceCollection services) where TSecurityContext : class, ISecurityContext where TSecurityContextFactory : class, ISecurityContextFactory
         {
             // We need to register the same instance of SecurityContextHolder for the ISecurityContextHolder and ISecurityContextInvalidator
             services.AddSingleton<SecurityContextHolder>();
