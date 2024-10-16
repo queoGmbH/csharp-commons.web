@@ -5,14 +5,8 @@
 ## Description
 Queo.Commons.Web can be used working with an web app or web api.
 
-
-## Example
--
-
-### Steps:
--
-
-## How to use ModelBinding
+## How to use it
+### How to use ModelBinding
 - include Nuget-Package (queo.commons.web.modelBinding)
 
 ```csharp
@@ -26,7 +20,7 @@ builder.Services.AddJsonModelConverter();
 builder.Services.AddEntityBinder(0);
 ```
 
-## How to use ExceptionHandling
+### How to use ExceptionHandling
 - include Nuget-Package (queo.commons.web.exceptionHandling)
 
 ```csharp
