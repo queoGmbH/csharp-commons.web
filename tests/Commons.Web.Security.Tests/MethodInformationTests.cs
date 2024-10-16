@@ -1,7 +1,7 @@
 using Commons.Web.Security.MethodAuthorize;
 using NUnit.Framework;
 
-namespace DocService.Shared.Tests.Infrastructure.Security;
+namespace Commons.Web.Security.Tests;
 [TestFixture]
 public class MethodInformationTests
 {
