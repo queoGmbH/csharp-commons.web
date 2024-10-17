@@ -1,6 +1,6 @@
 using System;
 
-namespace Commons.Web.Security.MethodAuthorize
+namespace Queo.Commons.Web.Security.MethodAuthorize
 {
     /// <summary>
     /// Exception for problems with method authorization.

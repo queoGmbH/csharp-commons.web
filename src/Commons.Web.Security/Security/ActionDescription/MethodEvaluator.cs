@@ -1,9 +1,9 @@
 using System.Linq;
 using System.Reflection;
 
-using Commons.Web.Security.MethodAuthorize;
+using Queo.Commons.Web.Security.MethodAuthorize;
 
-namespace Commons.Web.Security.ActionDescription
+namespace Queo.Commons.Web.Security.ActionDescription
 {
     /// <summary>
     /// This evaluator can determine an action's execution based on a method call.

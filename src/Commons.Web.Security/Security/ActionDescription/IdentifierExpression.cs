@@ -1,4 +1,4 @@
-namespace Commons.Web.Security.ActionDescription
+namespace Queo.Commons.Web.Security.ActionDescription
 {
     /// <summary>
     /// Parses an identifier expression to it's parts and can build

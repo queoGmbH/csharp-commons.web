@@ -3,7 +3,7 @@ using System.Linq;
 using System.Security;
 using System.Security.Principal;
 
-namespace Commons.Web.Security
+namespace Queo.Commons.Web.Security
 {
     /// <summary>
     /// Represents a class responsible for creating security contexts.

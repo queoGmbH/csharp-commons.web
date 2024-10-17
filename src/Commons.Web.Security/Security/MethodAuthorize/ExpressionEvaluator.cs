@@ -1,7 +1,7 @@
 using System;
 using System.Linq.Expressions;
 
-namespace Commons.Web.Security.MethodAuthorize
+namespace Queo.Commons.Web.Security.MethodAuthorize
 {
     /// <summary>
     /// Provides methods for evaluating expressions.

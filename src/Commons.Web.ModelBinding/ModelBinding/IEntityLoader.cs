@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Commons.Web.ModelBinding
+namespace Queo.Commons.Web.ModelBinding
 {
     /// <summary>
     ///     Describes a loader that loads an entity based BusinessId

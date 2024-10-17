@@ -1,4 +1,4 @@
-namespace Commons.Web.Security.SecurityContextAccessor
+namespace Queo.Commons.Web.Security.SecurityContextAccessor
 {
     /// <summary>
     /// Provides access to the static web security context.

@@ -4,7 +4,7 @@ using NJsonSchema.Generation;
 
 using Queo.Commons.Persistence;
 
-namespace Commons.Web.ModelBinding.SwaggerSchemaFilter
+namespace Queo.Commons.Web.ModelBinding.SwaggerSchemaFilter
 {
     public class EntitySchemaFilter : ISchemaProcessor
     {

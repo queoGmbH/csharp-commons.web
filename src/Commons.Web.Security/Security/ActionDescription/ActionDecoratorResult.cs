@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Commons.Web.Security.ActionDescription
+namespace Queo.Commons.Web.Security.ActionDescription
 {
     /// <summary>
     /// Encapsulates the original result of an action and additional data.

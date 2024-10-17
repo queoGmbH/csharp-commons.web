@@ -1,4 +1,4 @@
-namespace Commons.Web.Security
+namespace Queo.Commons.Web.Security
 {
     /// <summary>
     /// Can be used to invalidate security contexts.

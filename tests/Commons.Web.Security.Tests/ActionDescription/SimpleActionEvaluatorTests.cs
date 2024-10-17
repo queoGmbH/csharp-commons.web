@@ -1,10 +1,10 @@
-using Commons.Web.Security;
-using Commons.Web.Security.ActionDescription;
+using Queo.Commons.Web.Security;
+using Queo.Commons.Web.Security.ActionDescription;
 
 using Moq;
 using NUnit.Framework;
 
-namespace Commons.Web.Security.Tests.ActionDescription
+namespace Queo.Commons.Web.Security.Tests.ActionDescription
 {
     [TestFixture]
     public class SimpleActionEvaluatorTests

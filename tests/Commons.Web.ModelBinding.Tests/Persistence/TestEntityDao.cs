@@ -1,9 +1,9 @@
 ﻿using Queo.Commons.Persistence.Generic;
 
-using Commons.Web.ModelBinding.Tests.Domain;
+using Queo.Commons.Web.ModelBinding.Tests.Domain;
 using Queo.Commons.Persistence.Exceptions;
 
-namespace Commons.Web.ModelBinding.Tests.Persistence
+namespace Queo.Commons.Web.ModelBinding.Tests.Persistence
 {
 
     public class TestEntityDao : ITestEntityDao

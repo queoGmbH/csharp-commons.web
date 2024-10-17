@@ -3,7 +3,7 @@ using Microsoft.Extensions.Options;
 
 using Queo.Commons.Persistence;
 
-namespace Commons.Web.ModelBinding.Configuration
+namespace Queo.Commons.Web.ModelBinding.Configuration
 {
     public class JsonConfigurationSetup : IConfigureOptions<JsonOptions>
     {

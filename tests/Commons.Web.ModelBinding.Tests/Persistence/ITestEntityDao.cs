@@ -1,8 +1,8 @@
 ﻿using Queo.Commons.Persistence;
 
-using Commons.Web.ModelBinding.Tests.Domain;
+using Queo.Commons.Web.ModelBinding.Tests.Domain;
 
-namespace Commons.Web.ModelBinding.Tests.Persistence
+namespace Queo.Commons.Web.ModelBinding.Tests.Persistence
 {
     public interface ITestEntityDao : IEntityDao<TestEntity>
     {

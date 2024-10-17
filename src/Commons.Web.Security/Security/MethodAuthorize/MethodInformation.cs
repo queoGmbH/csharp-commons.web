@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Commons.Web.Security.MethodAuthorize
+namespace Queo.Commons.Web.Security.MethodAuthorize
 {
     /// <summary>
     /// Gets and holds information about a method.

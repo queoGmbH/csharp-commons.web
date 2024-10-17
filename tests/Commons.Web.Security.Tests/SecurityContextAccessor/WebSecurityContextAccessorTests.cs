@@ -1,12 +1,12 @@
 using System.Security;
 using System.Security.Claims;
-using Commons.Web.Security.SecurityContextAccessor;
+using Queo.Commons.Web.Security.SecurityContextAccessor;
 using Microsoft.AspNetCore.Http;
 
 using Moq;
 using NUnit.Framework;
 
-namespace Commons.Web.Security.Tests.SecurityContextAccessor
+namespace Queo.Commons.Web.Security.Tests.SecurityContextAccessor
 {
     [TestFixture]
     public class WebSecurityContextAccessorTests

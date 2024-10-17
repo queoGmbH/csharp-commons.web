@@ -1,10 +1,10 @@
 using System.Reflection;
 
-using Commons.Web.Security.ActionDescription;
-using Commons.Web.Security.MethodAuthorize;
+using Queo.Commons.Web.Security.ActionDescription;
+using Queo.Commons.Web.Security.MethodAuthorize;
 using NUnit.Framework;
 
-namespace Commons.Web.Security.Tests.ActionDescription;
+namespace Queo.Commons.Web.Security.Tests.ActionDescription;
 public class MethodEvaluatorTests
 {
     private MethodInfo _matchingMethod;

@@ -1,6 +1,6 @@
 ﻿using Queo.Commons.Persistence;
 
-namespace Commons.Web.ModelBinding.Tests.Domain
+namespace Queo.Commons.Web.ModelBinding.Tests.Domain
 {
     /// <summary>
     /// Represents a test entity for testing purposes.

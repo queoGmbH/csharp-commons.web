@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Queo.Commons.Checks;
 using Queo.Commons.Persistence;
 
-namespace Commons.Web.ModelBinding
+namespace Queo.Commons.Web.ModelBinding
 {
     /// <summary>
     /// Provides a model binder for Entity types.

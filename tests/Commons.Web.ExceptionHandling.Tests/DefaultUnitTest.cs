@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace Commons.Web.Tests
+namespace Queo.Commons.Web.Tests
 {
     public class Tests
     {

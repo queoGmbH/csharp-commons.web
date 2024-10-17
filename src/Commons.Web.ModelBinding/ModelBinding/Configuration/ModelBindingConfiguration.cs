@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Commons.Web.ModelBinding.Configuration
+namespace Queo.Commons.Web.ModelBinding.Configuration
 {
     /// <summary>
     /// Provides a static class for configuring model binding.

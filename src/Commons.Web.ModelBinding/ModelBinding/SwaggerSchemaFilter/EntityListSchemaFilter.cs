@@ -5,7 +5,7 @@ using NJsonSchema.Generation;
 
 using Queo.Commons.Persistence;
 
-namespace Commons.Web.ModelBinding.SwaggerSchemaFilter
+namespace Queo.Commons.Web.ModelBinding.SwaggerSchemaFilter
 {
     /// <summary>
     /// This class is used to apply a schema filter to Entity lists in the Swagger documentation.

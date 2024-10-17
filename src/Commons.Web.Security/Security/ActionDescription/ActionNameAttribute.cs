@@ -1,6 +1,6 @@
 using System;
 
-namespace Commons.Web.Security.ActionDescription
+namespace Queo.Commons.Web.Security.ActionDescription
 {
     /// <summary>
     /// Use this attribute to specify the name of the permission that is represented by the method.

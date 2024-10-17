@@ -2,13 +2,13 @@
 using Moq;
 
 using FluentAssertions;
-using Commons.Web.ModelBinding.Tests.Domain;
-using Commons.Web.ModelBinding.Tests.Persistence;
+using Queo.Commons.Web.ModelBinding.Tests.Domain;
+using Queo.Commons.Web.ModelBinding.Tests.Persistence;
 
 using Queo.Commons.Persistence;
-using Commons.Web.ModelBinding.ExceptionHandling;
+using Queo.Commons.Web.ModelBinding.ExceptionHandling;
 
-namespace Commons.Web.ModelBinding.Tests
+namespace Queo.Commons.Web.ModelBinding.Tests
 {
     [TestFixture]
     public class EntityLoaderTest

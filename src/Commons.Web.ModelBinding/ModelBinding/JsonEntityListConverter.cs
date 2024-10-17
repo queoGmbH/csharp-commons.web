@@ -5,9 +5,9 @@ using System.Text.Json.Serialization;
 
 using Queo.Commons.Persistence;
 
-using Commons.Web.ModelBinding.ExceptionHandling;
+using Queo.Commons.Web.ModelBinding.ExceptionHandling;
 
-namespace Commons.Web.ModelBinding
+namespace Queo.Commons.Web.ModelBinding
 {
     /// <summary>
     /// Provides a <see cref="JsonConverter" /> that attempts to load a list of entities when they are only

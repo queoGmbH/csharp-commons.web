@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Commons.Web.Security.MethodAuthorize;
+using Queo.Commons.Web.Security.MethodAuthorize;
 using NUnit.Framework;
 
-namespace Commons.Web.Security.Tests.MethodAuthorize
+namespace Queo.Commons.Web.Security.Tests.MethodAuthorize
 {
 
     [TestFixture]
