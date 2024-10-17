@@ -4,7 +4,7 @@ using System.Security.Claims;
 
 using Microsoft.AspNetCore.Http;
 
-namespace Commons.Web.Security.SecurityContextAccessor
+namespace Queo.Commons.Web.Security.SecurityContextAccessor
 {
     /// <summary>
     /// Accessor for the current <see cref="ISecurityContext"/> in a web application.

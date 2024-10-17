@@ -1,6 +1,6 @@
 using System;
 
-namespace Commons.Web.Security.ActionDescription
+namespace Queo.Commons.Web.Security.ActionDescription
 {
     /// <summary>
     /// This attribute is used to describe which actions are available for a user.

@@ -2,9 +2,9 @@ using System;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 
-using Commons.Web.Security.SecurityContextAccessor;
+using Queo.Commons.Web.Security.SecurityContextAccessor;
 
-namespace Commons.Web.Security.BusinessIdAuthorize
+namespace Queo.Commons.Web.Security.BusinessIdAuthorize
 {
     /// <summary>
     /// The attribute is used to perform authorization based on the identifier in the route.

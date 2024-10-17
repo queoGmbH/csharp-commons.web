@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Commons.Web.Security.ActionDescription
+namespace Queo.Commons.Web.Security.ActionDescription
 {
     /// <summary>
     /// Provides configuration for the action decorator.

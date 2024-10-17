@@ -1,6 +1,6 @@
 using System;
 
-namespace Commons.Web.ModelBinding.ExceptionHandling
+namespace Queo.Commons.Web.ModelBinding.ExceptionHandling
 {
     /// <summary>
     /// Exception thrown when there is an error during model binding.

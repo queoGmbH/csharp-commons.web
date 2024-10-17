@@ -1,11 +1,11 @@
 using System.Security;
 using System.Security.Principal;
-using Commons.Web.Security.Tests.RequiredImplementations;
+using Queo.Commons.Web.Security.Tests.RequiredImplementations;
 using NUnit.Framework;
 
 
 
-namespace Commons.Web.Security.Tests
+namespace Queo.Commons.Web.Security.Tests
 {
     public class SecurityContextHolderTests
     {

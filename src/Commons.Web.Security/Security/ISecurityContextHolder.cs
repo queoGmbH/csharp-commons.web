@@ -1,6 +1,6 @@
 using System.Security.Principal;
 
-namespace Commons.Web.Security
+namespace Queo.Commons.Web.Security
 {
     /// <summary>
     /// Provides methods for manipulating the security contexts.

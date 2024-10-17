@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace Commons.Web.Security.ActionDescription
+namespace Queo.Commons.Web.Security.ActionDescription
 {
     /// <summary>
     /// Interface for types that can build an ActionEvaluator.

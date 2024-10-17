@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Commons.Web.Security.MethodAuthorize
+namespace Queo.Commons.Web.Security.MethodAuthorize
 {
     /// <summary>
     /// Represents a configuration class for method authorization.

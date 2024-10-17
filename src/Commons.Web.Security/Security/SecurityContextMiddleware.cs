@@ -2,9 +2,9 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
-using Commons.Web.Security.SecurityContextAccessor;
+using Queo.Commons.Web.Security.SecurityContextAccessor;
 
-namespace Commons.Web.Security
+namespace Queo.Commons.Web.Security
 {
     /// <summary>
     /// Middleware for handling security context in the application.
