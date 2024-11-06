@@ -5,10 +5,10 @@ using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-using Commons.Web.ModelBinding.ExceptionHandling;
+using Queo.Commons.Web.ModelBinding.ExceptionHandling;
 using Queo.Commons.Persistence;
 
-namespace Commons.Web.ModelBinding
+namespace Queo.Commons.Web.ModelBinding
 {
     public class JsonEntityConverter<TEntity> : JsonConverter<TEntity>
     {

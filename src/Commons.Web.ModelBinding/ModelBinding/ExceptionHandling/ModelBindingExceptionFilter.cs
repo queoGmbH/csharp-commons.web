@@ -2,7 +2,7 @@ using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace Commons.Web.ModelBinding.ExceptionHandling
+namespace Queo.Commons.Web.ModelBinding.ExceptionHandling
 {
     /// <summary>
     /// Filter to handle ModelBindingException.

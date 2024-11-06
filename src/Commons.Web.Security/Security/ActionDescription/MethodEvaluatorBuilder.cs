@@ -4,9 +4,9 @@ using System.Reflection;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 
-using Commons.Web.Security.MethodAuthorize;
+using Queo.Commons.Web.Security.MethodAuthorize;
 
-namespace Commons.Web.Security.ActionDescription
+namespace Queo.Commons.Web.Security.ActionDescription
 {
     internal class MethodEvaluatorBuilder : IEvaluatorBuilder
     {

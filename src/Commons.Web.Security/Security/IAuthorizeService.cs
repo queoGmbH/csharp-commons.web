@@ -1,4 +1,4 @@
-namespace Commons.Web.Security
+namespace Queo.Commons.Web.Security
 {
     /// <summary>
     /// Represents an authorization service.

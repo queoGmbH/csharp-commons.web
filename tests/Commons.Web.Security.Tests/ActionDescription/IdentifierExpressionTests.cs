@@ -1,7 +1,7 @@
-using Commons.Web.Security.ActionDescription;
+using Queo.Commons.Web.Security.ActionDescription;
 using NUnit.Framework;
 
-namespace Commons.Web.Security.Tests.ActionDescription
+namespace Queo.Commons.Web.Security.Tests.ActionDescription
 {
 
     [TestFixture]

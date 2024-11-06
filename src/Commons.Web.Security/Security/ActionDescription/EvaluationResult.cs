@@ -1,4 +1,4 @@
-namespace Commons.Web.Security.ActionDescription
+namespace Queo.Commons.Web.Security.ActionDescription
 {
     /// <summary>
     /// The result of an evaluation of whether the user can perform an action.

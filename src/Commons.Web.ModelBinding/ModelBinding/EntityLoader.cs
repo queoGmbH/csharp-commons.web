@@ -1,9 +1,9 @@
 ﻿using System;
-using Commons.Web.ModelBinding.ExceptionHandling;
+using Queo.Commons.Web.ModelBinding.ExceptionHandling;
 using Queo.Commons.Persistence;
 using Queo.Commons.Persistence.Exceptions;
 
-namespace Commons.Web.ModelBinding
+namespace Queo.Commons.Web.ModelBinding
 {
     public class EntityLoader<TEntity> : IEntityLoader<TEntity> where TEntity : Entity
     {

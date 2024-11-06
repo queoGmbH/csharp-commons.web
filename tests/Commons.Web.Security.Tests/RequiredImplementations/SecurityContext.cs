@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace Commons.Web.Security.Tests.RequiredImplementations
+namespace Queo.Commons.Web.Security.Tests.RequiredImplementations
 {
     /// <summary>
     /// Represents the security context for a user, containing information about their identity, roles, and permissions.

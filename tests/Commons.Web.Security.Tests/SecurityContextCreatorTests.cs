@@ -3,7 +3,7 @@ using System.Security.Principal;
 using Moq;
 using NUnit.Framework;
 
-namespace Commons.Web.Security.Tests
+namespace Queo.Commons.Web.Security.Tests
 {
     [TestFixture]
     public class SecurityContextCreatorTests

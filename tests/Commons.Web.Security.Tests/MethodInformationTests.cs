@@ -1,7 +1,7 @@
-using Commons.Web.Security.MethodAuthorize;
+using Queo.Commons.Web.Security.MethodAuthorize;
 using NUnit.Framework;
 
-namespace Commons.Web.Security.Tests;
+namespace Queo.Commons.Web.Security.Tests;
 [TestFixture]
 public class MethodInformationTests
 {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Commons.Web.Security
+namespace Queo.Commons.Web.Security
 {
     /// <summary>
     /// Interface for the security context

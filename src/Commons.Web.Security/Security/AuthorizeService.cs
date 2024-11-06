@@ -1,6 +1,6 @@
-using Commons.Web.Security.SecurityContextAccessor;
+using Queo.Commons.Web.Security.SecurityContextAccessor;
 
-namespace Commons.Web.Security
+namespace Queo.Commons.Web.Security
 {
     /// <summary>
     /// Provides methods to check whether the user is authorized to perform a certain operation.

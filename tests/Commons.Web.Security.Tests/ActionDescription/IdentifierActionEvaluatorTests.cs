@@ -1,6 +1,6 @@
-using Commons.Web.Security;
-using Commons.Web.Security.ActionDescription;
-using Commons.Web.Security.SecurityContextAccessor;
+using Queo.Commons.Web.Security;
+using Queo.Commons.Web.Security.ActionDescription;
+using Queo.Commons.Web.Security.SecurityContextAccessor;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Moq;
 using NUnit.Framework;
 
-namespace Commons.Web.Security.Tests.ActionDescription
+namespace Queo.Commons.Web.Security.Tests.ActionDescription
 {
 
 

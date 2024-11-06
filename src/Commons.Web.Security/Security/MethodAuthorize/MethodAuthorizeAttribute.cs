@@ -5,7 +5,7 @@ using System.Reflection;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Commons.Web.Security.MethodAuthorize
+namespace Queo.Commons.Web.Security.MethodAuthorize
 {
     /// <summary>
     /// This attribute is used to perform authorization via a method call.

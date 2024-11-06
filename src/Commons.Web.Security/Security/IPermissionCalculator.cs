@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Security.Principal;
 
-namespace Commons.Web.Security
+namespace Queo.Commons.Web.Security
 {
     /// <summary>
     /// Represents a permission calculator that calculates a set of permissions for a given principal.

@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Queo.Commons.Checks;
 using Queo.Commons.Persistence;
 
-using Commons.Web.ModelBinding.ExceptionHandling;
+using Queo.Commons.Web.ModelBinding.ExceptionHandling;
 
-namespace Commons.Web.ModelBinding
+namespace Queo.Commons.Web.ModelBinding
 {
     /// <summary>
     /// This class provides methods for binding models in a way that supports 

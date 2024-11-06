@@ -2,9 +2,9 @@ using System;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 
-using Commons.Web.Security.SecurityContextAccessor;
+using Queo.Commons.Web.Security.SecurityContextAccessor;
 
-namespace Commons.Web.Security.ActionDescription
+namespace Queo.Commons.Web.Security.ActionDescription
 {
     /// <summary>
     /// Simple evaluator builder.

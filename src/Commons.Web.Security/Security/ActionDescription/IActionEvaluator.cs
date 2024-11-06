@@ -1,4 +1,4 @@
-namespace Commons.Web.Security.ActionDescription
+namespace Queo.Commons.Web.Security.ActionDescription
 {
     /// <summary>
     /// Interface for types that can evaluate whether an action can be executed.

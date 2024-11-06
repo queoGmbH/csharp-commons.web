@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Commons.Web.Security
+namespace Queo.Commons.Web.Security
 {
     /// <summary>
     /// Represents a role that can be assigned to users and represents a collection of permissions for these users.

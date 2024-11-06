@@ -1,4 +1,4 @@
-namespace Commons.Web.Security.ActionDescription
+namespace Queo.Commons.Web.Security.ActionDescription
 {
     /// <summary>
     /// Evaluates a action that is simple checked by a permission.

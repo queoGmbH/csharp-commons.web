@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace Commons.Web.Exceptions;
+namespace Queo.Commons.Web.Exceptions;
 /// <summary>
 /// Is used to extend the error message during validation.
 /// </summary>
