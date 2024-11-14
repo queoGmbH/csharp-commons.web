@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,10 +13,9 @@ namespace Queo.Commons.Web.Security.ActionDescription
     /// Extends the original response with additional information.
     /// The additional information is determined by the action description attributes and describe the permissions needed to execute the different actions.
     /// </summary>
-    public class ActionDecoratorFilter : IActionFilter
+    public class ActionDecoratorFilter : IActionFilter, IAsyncActionFilter
     {
         private const string QUERY_PARAMETER_NAME = "additionalInformation";
-
         private List<EvaluationResult> _evaluationResults = [];
         private bool _shouldBeDecorated;
 
@@ -28,22 +28,7 @@ namespace Queo.Commons.Web.Security.ActionDescription
             // Should the result decorated?
             if (_shouldBeDecorated)
             {
-                ObjectResult? objectResult = context.Result as ObjectResult;
-                if (objectResult == null)
-                {
-                    throw new InvalidOperationException("Result is not an ObjectResult.");
-                }
-                var originalResult = objectResult.Value;
-                ActionDecoratorResult actionDecoratorResult;
-                if (IsDisabledByQueryParam(context))
-                {
-                    actionDecoratorResult = new ActionDecoratorResult(originalResult, []);
-                }
-                else
-                {
-                    actionDecoratorResult = new ActionDecoratorResult(originalResult, _evaluationResults.ToDictionary(x => x.Name, v => v.CanExecute));
-                }
-                objectResult.Value = actionDecoratorResult;
+                DecorateResult(context);
             }
         }
 
@@ -56,11 +41,69 @@ namespace Queo.Commons.Web.Security.ActionDescription
             _shouldBeDecorated = ShouldResultBeDecorated(context);
             if (_shouldBeDecorated)
             {
-                List<string> actionDescriptions = GetActionDescriptions(context);
-                ActionEvaluatorBuilderFactory? factory = GetEvaluatorBuilderFactory(context) ?? throw new InvalidOperationException("ActionEvaluatorBuilderFactory not found in the service collection.");
-                List<IEvaluatorBuilder> builders = GetBuilders(actionDescriptions, factory);
-                _evaluationResults = GetEvaluationResults(context, builders);
+                BuildEvaluationResults(context);
             }
+        }
+
+        /// <summary>
+        /// Executes before the action method is executed.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="next"></param>
+        /// <returns></returns>
+        public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
+        {
+            _shouldBeDecorated = ShouldResultBeDecorated(context);
+
+            if (_shouldBeDecorated)
+            {
+                BuildEvaluationResults(context);
+            }
+
+            ActionExecutedContext actionExecutedContext = await next();
+
+            // Should the result decorated?
+            if (_shouldBeDecorated)
+            {
+                DecorateResult(actionExecutedContext);
+            }
+        }
+
+        private void DecorateResult(ActionExecutedContext context)
+        {
+            ObjectResult? objectResult = context.Result as ObjectResult;
+            if (objectResult == null)
+            {
+                if (context.Exception != null)
+                {
+                    // if there is an exception, we leave it to the exception filter to handle it
+                    return;
+                }
+                throw new InvalidOperationException("Result is not an ObjectResult.");
+            }
+            var originalResult = objectResult.Value;
+            ActionDecoratorResult actionDecoratorResult;
+            if (IsDisabledByQueryParam(context))
+            {
+                actionDecoratorResult = new ActionDecoratorResult(originalResult, []);
+            }
+            else
+            {
+                actionDecoratorResult = new ActionDecoratorResult(originalResult, _evaluationResults.ToDictionary(x => x.Name, v => v.CanExecute));
+            }
+            objectResult.Value = actionDecoratorResult;
+        }
+
+        private void BuildEvaluationResults(ActionExecutingContext context)
+        {
+            List<string> actionDescriptions = GetActionDescriptions(context);
+            ActionEvaluatorBuilderFactory? factory = GetEvaluatorBuilderFactory(context);
+            if (factory == null)
+            {
+                throw new InvalidOperationException("ActionEvaluatorBuilderFactory not found in the service collection.");
+            }
+            List<IEvaluatorBuilder> builders = GetBuilders(actionDescriptions, factory);
+            _evaluationResults = GetEvaluationResults(context, builders);
         }
 
         private static List<EvaluationResult> GetEvaluationResults(ActionExecutingContext context, List<IEvaluatorBuilder> builders)
