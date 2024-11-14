@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<TargetFrameworks>net8.0</TargetFrameworks>
 		<Nullable>enable</Nullable>
-		<VersionPrefix>1.0.2</VersionPrefix>
+		<VersionPrefix>1.0.1</VersionPrefix>
 		<AssemblyName>Queo.Commons.Web.ModelBinding</AssemblyName>
 		<RootNamespace>Queo.Commons.Web.ModelBinding</RootNamespace>
 		<Authors>queo/software/csharp</Authors>
@@ -22,12 +22,5 @@
 
 	<ItemGroup>
 	  <Folder Include="ModelBinding\" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="Queo.Commons.Checks" Version="3.0.1" />
-		<PackageReference Include="Queo.Commons.Persistence" Version="3.0.1" />
-		<PackageReference Include="NSwag.AspNetCore" Version="14.1.0" />
-		<PackageReference Include="NSwag.Annotations" Version="14.1.0" />
 	</ItemGroup>
 </Project>

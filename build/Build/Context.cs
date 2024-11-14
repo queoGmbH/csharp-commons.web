@@ -51,9 +51,8 @@ namespace Build
         /// Gets the projects to build within the solution.
         /// </summary>
         public List<ProjectToBuild> ProjectsToBuild { get; } = new List<ProjectToBuild>() {
-            new ProjectToBuild("Release", @"src\Commons.Web.ExceptionHandling\Commons.Web.ExceptionHandling.csproj", false),
-            new ProjectToBuild("Release", @"src\Commons.Web.ModelBinding\Commons.Web.ModelBinding.csproj", false),
-            new ProjectToBuild("Release", @"src\Commons.Web.Security\Commons.Web.Security.csproj",false),
+            new ProjectToBuild("Release", @"src\Commons.Web.ExceptionHandling\Commons.Web.ExceptionHandling.csproj"),
+            new ProjectToBuild("Release", @"src\Commons.Web.ModelBinding\Commons.Web.ModelBinding.csproj")
         };
     }
 
@@ -65,11 +64,10 @@ namespace Build
         /// <summary>
         /// Ctor.
         /// </summary>
-        public ProjectToBuild(string buildConfig, string project, bool shouldBePublished)
+        public ProjectToBuild(string buildConfig, string project)
         {
             BuildConfig = buildConfig;
             ProjectPath = project;
-            ShouldBePublished = shouldBePublished;
         }
 
         /// <summary>
@@ -81,11 +79,6 @@ namespace Build
         /// Gets the path to the project file.
         /// </summary>
         public string ProjectPath { get; }
-
-        /// <summary>
-        /// Gets the flag indication whether the project should be published.
-        /// </summary>
-        public bool ShouldBePublished { get; }
     }
 
     /// <summary>
@@ -98,8 +91,7 @@ namespace Build
         /// </summary>
         public Dictionary<string, string> TestProjects { get; } = new Dictionary<string, string>() {
             { "Commons.Web.ExceptionHandling.Tests", @"tests\Commons.Web.ExceptionHandling.Tests\Commons.Web.ExceptionHandling.Tests.csproj" },
-            { "Commons.Web.ModelBinding.Tests", @"tests\Commons.Web.ModelBinding.Tests\Commons.Web.ModelBinding.Tests.csproj" },
-            { "Commons.Web.Security.Tests", @"tests\Commons.Web.Security.Tests\Commons.Web.Security.Tests.csproj" }
+            { "Commons.Web.ModelBinding.Tests", @"tests\Commons.Web.ModelBinding.Tests\Commons.Web.ModelBinding.Tests.csproj" }
         };
         public string BuildConfig { get; } = "Release";
     }

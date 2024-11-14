@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Queo.Commons.Web.Exceptions;
+namespace Commons.Web.Exceptions;
 public static class ProblemDetailsExtensions
 {
     /// <summary>
