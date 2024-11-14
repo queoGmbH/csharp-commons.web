@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
-namespace Commons.Web.Exceptions;
+namespace Queo.Commons.Web.Exceptions;
 
 /// <summary>
 ///  Writes the problem details to the response.

@@ -7,9 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Web.ExceptionHandli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Web.ModelBinding", "src\Commons.Web.ModelBinding\Commons.Web.ModelBinding.csproj", "{7F47186F-AF82-4A96-BDB8-F6686DDDA9C6}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Web.Security", "src\Commons.Web.Security\Commons.Web.Security.csproj", "{C4090896-BC12-4DA2-860B-A81F68418DC4}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Web.ExceptionHandling.Tests", "tests\Commons.Web.ExceptionHandling.Tests\Commons.Web.ExceptionHandling.Tests.csproj", "{051F0A22-8A89-4701-B041-0EC42B458B70}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Web.ModelBinding.Tests", "tests\Commons.Web.ModelBinding.Tests\Commons.Web.ModelBinding.Tests.csproj", "{52B60B53-F140-42E6-B2FF-13B636327ABD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons.Web.Security.Tests", "tests\Commons.Web.Security.Tests\Commons.Web.Security.Tests.csproj", "{A4028336-11FC-46E2-9D1C-9FD73EB88810}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +29,10 @@ Global
 		{7F47186F-AF82-4A96-BDB8-F6686DDDA9C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F47186F-AF82-4A96-BDB8-F6686DDDA9C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F47186F-AF82-4A96-BDB8-F6686DDDA9C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4090896-BC12-4DA2-860B-A81F68418DC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4090896-BC12-4DA2-860B-A81F68418DC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4090896-BC12-4DA2-860B-A81F68418DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4090896-BC12-4DA2-860B-A81F68418DC4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{051F0A22-8A89-4701-B041-0EC42B458B70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{051F0A22-8A89-4701-B041-0EC42B458B70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{051F0A22-8A89-4701-B041-0EC42B458B70}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +41,10 @@ Global
 		{52B60B53-F140-42E6-B2FF-13B636327ABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52B60B53-F140-42E6-B2FF-13B636327ABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52B60B53-F140-42E6-B2FF-13B636327ABD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4028336-11FC-46E2-9D1C-9FD73EB88810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4028336-11FC-46E2-9D1C-9FD73EB88810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4028336-11FC-46E2-9D1C-9FD73EB88810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4028336-11FC-46E2-9D1C-9FD73EB88810}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

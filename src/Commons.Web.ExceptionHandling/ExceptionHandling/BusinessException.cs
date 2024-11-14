@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Commons.Web.Exceptions;
+namespace Queo.Commons.Web.Exceptions;
 
 /// <summary>
 ///  Exception that is thrown when a business rule is violated.
